@@ -6,16 +6,19 @@ var label = document.getElementById('label');
 
 var LIMIT = 30;
 var WARNING = 10;
+var STOP = 0;
 label.innerHTML = LIMIT;
 
 comment.addEventListener('keyup', function() {
 	var remaining = LIMIT - this.value.length;
 	label.innerHTML = remaining;
-	//if (remaining < WARNING ) {
-//		label.className = 'warning';
-	//} else {
-	//	label.className ='';
-	//}
-	label.className = remaining < WARNING ? 'warning' : '';
+	if (remaining < WARNING && remaining > STOP) {
+		label.className = 'warning';
+	} else if (remaining <= STOP) {
+		label.className = "stop";
+	} else {
+		label.className = '';
+	}
+	//label.className = remaining < WARNING ? 'warning' : '';
 });
 })();

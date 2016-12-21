@@ -57,3 +57,14 @@ p {
 .warning {
 	color: red;
 }
+.stop {
+	color: blue;
+	font-size: 20px;
+	opacity: 0.5;
+}
+.stop:after {
+	color: red;
+	font-size: 20px;
+	content: "OVER";
+	
+}
